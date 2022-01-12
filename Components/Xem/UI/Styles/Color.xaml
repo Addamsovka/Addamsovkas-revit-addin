@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="PrimaryColor">#3EB489</Color>
+    <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}"/>
+
+    <Color x:Key="SecondaryColor">#2e8566</Color>
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}"/>
+
+    <Color x:Key="TerciaryColor">#ffffff</Color>
+    <SolidColorBrush x:Key="TerciaryBrush" Color="{StaticResource TerciaryColor}"/>
+
+    <Color x:Key="HighlightColor">#ee6e6c</Color>
+    <SolidColorBrush x:Key="HighlightBrush" Color="{StaticResource HighlightColor}"/>
+
+    <Color x:Key="BG1Color">#ebeced</Color>
+    <SolidColorBrush x:Key="BGB1rush" Color="{StaticResource BG1Color}"/>
+
+    <Color x:Key="BG2Color">#3f4652</Color>
+    <SolidColorBrush x:Key="BG2Brush" Color="{StaticResource BG2Color}"/>
+
+    <Color x:Key="BG3Color">#272c33</Color>
+    <SolidColorBrush x:Key="BG3Brush" Color="{StaticResource BG3Color}"/>
+
+</ResourceDictionary>

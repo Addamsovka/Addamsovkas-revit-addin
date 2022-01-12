@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+	<!-- Revit Command To Export Coplete IFC model for testing-->
+	<AddIn Type="Command">
+		<Text>IFCExporterCommand</Text>
+		<Description>IFCExporterCommand</Description>
+		<Assembly>AddamsovkaRevitPlugin.dll</Assembly>
+		<FullClassName>Xem.IFCExporterCommand</FullClassName>
+		<ClientId>BE99B2B1-FEC7-4C33-8977-59B5CFC96904</ClientId>
+		<VendorId>NAME</VendorId>
+		<VendorDescription>Your Company Information</VendorDescription>
+	</AddIn>
+	
+	<!-- Loads the whole Application from App file in .dll library -->
+	<AddIn Type="Application">
+		<Name>Application AddamsovkaRevitPlugin</Name>
+		<Assembly>AddamsovkaRevitPlugin.dll</Assembly>
+		<FullClassName>AddamsovkaRevitPlugin.App</FullClassName>
+		<ClientId>BEC5D6D4-CA24-4363-A10F-6FBC979825FC</ClientId>
+		<VendorId>NAME</VendorId>
+		<VendorDescription>Your Company Information</VendorDescription>
+	</AddIn>
+	
+</RevitAddIns>
