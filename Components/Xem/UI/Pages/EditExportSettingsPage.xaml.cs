@@ -21,14 +21,14 @@ namespace Xem
             InitializeComponent();
 
             // 3Dview avaiable parameters
-            lbOne.ItemsSource = revit.Get3DViewParameters();
+            lbOne.ItemsSource = revit.Get3DViewParameters(); // TODO: resize lbOne
 
             // get all sheet sets avaiable in project
             // TODO: validation about content (sheets vs views -> ifc should only export 3d views)
             SetList.ItemsSource = revit.GetViewSheetSets();
 
             // Get all avaiable saved IFC option in project
-            ExportingProfileList.ItemsSource = revit.GetIfcOptions();
+            ExportingProfileList.ItemsSource = revit.GetIfcOptions(); // TODO: list is not showing
         }
 
         private void ApplyButton_Click(object sender, RoutedEventArgs e)
