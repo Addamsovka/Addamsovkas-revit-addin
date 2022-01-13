@@ -11,7 +11,7 @@ namespace Xem
     class XemCommand : IExternalCommand
     {
         /// <summary>
-        /// The main method executing command (inhereted from IExternalCommand), Opens custom UI window
+        /// The main method executing command Xem and open UI for the command
         /// </summary>
         /// <param name="commandData"></param>
         /// <param name="message"></param>
@@ -26,22 +26,17 @@ namespace Xem
 
             try
             {
-                //using (Transaction tx = new Transaction(doc))
-                //{
-                //tx.Start("My window Xem");
-
-                #region Revit Event Handler
+                #region Revit Event Handler Instance
                 TestExternalEventHandler testingEventHandler = new TestExternalEventHandler();
                 ExternalEvent exEvent = ExternalEvent.Create(testingEventHandler);
                 #endregion
 
                 // Pass an EventHandler to the WindowViewModel
                 var window = new MainWindow(commandData, testingEventHandler, exEvent);
+
                 window.Show();
-                //tx.Commit();
 
                 return Result.Succeeded;
-                //}
             }
             catch (Exception ex)
             {

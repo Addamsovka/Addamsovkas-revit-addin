@@ -8,6 +8,9 @@ using System.Collections.Generic;
 
 namespace Xem
 {
+    /// <summary>
+    /// Validation for user field
+    /// </summary>
     class RuleNamingValidation : ValidationRule
     {
         // Accesing View model properties (Testing Lisk)
@@ -36,13 +39,14 @@ namespace Xem
                 return new ValidationResult(false, "Please check, < > should be used only for parameters.");
             }
 
-            List<string> paramList = new List<string>();
-            foreach (string param in ElementParameters.GetCollection()) // TODO: rename and implement list of parameters from the view element (or sheet element later)
-            {
-                paramList.Add(param);
-            }
+            // Get list of avaiable parameter names
+            // View parameters for views
+            // TODO: Sheet parameters for sheets (will be implemented later)
+            RevitModel revit = new RevitModel();
+            List<string> paramList = revit.Get3DViewParameters();
 
-            // Control all parameters are in the list (list of all parameters from Revit element = view)
+
+            // Check all parameters if they are in the list (list of all parameters from Revit element = view)
             while (onlyBracketMatch.Success)
             {
                 string rParam = onlyBracketMatch.Groups[1].ToString();

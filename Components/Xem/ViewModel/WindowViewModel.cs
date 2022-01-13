@@ -5,6 +5,9 @@ using System.ComponentModel;
 
 namespace Xem
 {
+    /// <summary>
+    /// Viewmodel uset for the whole window
+    /// </summary>
     public class WindowViewModel : INotifyPropertyChanged
     {
 

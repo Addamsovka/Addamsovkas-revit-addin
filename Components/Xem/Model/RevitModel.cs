@@ -58,6 +58,30 @@ namespace Xem
             return stringList;
         }
 
+        public List<string> GetViewSheetSets()
+        {
+            IList<Element> viewSheetSets = new FilteredElementCollector(this.doc).OfClass(typeof(ViewSheetSet)).ToElements();
+            List<string> stringList = new List<string>();
+            foreach (Element e in viewSheetSets)
+            {
+                stringList.Add(e.Name);
+            }
+            return stringList;
+        }
+
+        public List<string> GetIfcOptions()
+        {
+            IFCExportConfigurationsMap iFCExportOptions = new IFCExportConfigurationsMap();
+
+            var aha = iFCExportOptions.Values;
+            List<string> stringList = new List<string>();
+            foreach (var a in aha)
+            {
+                stringList.Add(a.Name);
+            }
+
+            return stringList;
+        }
 
 
         public List<string> GetAll3DViews()

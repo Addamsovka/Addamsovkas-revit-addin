@@ -1,4 +1,5 @@
 ﻿#region Namespaces
+using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System.Diagnostics;
 using System.Windows;
@@ -7,7 +8,7 @@ using System.Windows;
 namespace Xem
 {
     /// <summary>
-    /// Interaction logic for EditExportSettingsPage.xaml
+    /// Interaction logic for EditExportSettingsPage.xaml,  not designed yet - it is for testing now
     /// </summary>
     public partial class EditExportSettingsPage : BasePage<EditExportSettingsPageViewModel>
     {
@@ -19,10 +20,15 @@ namespace Xem
         {
             InitializeComponent();
 
-            // Temporary testing values for view TODO: delete after implementation of real data
-            lbOne.ItemsSource = new string[] { "Name", "Project Name", "Width", "CUSTOM_PARAM" };
-            SetList.ItemsSource = new string[] { "one", "two", "three", "four" };
-            ExportingProfileList.ItemsSource = new string[] { "export1", "export2", "export3" };
+            // 3Dview avaiable parameters
+            lbOne.ItemsSource = revit.Get3DViewParameters();
+
+            // get all sheet sets avaiable in project
+            // TODO: validation about content (sheets vs views -> ifc should only export 3d views)
+            SetList.ItemsSource = revit.GetViewSheetSets();
+
+            // Get all avaiable saved IFC option in project
+            ExportingProfileList.ItemsSource = revit.GetIfcOptions();
         }
 
         private void ApplyButton_Click(object sender, RoutedEventArgs e)
@@ -51,7 +57,7 @@ namespace Xem
 
         
 
-        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        private void RefreshButton_Click(object sender, RoutedEventArgs e) // Make avaiable only if passes validation
         {
             Debug.WriteLine("Refresh button");
             // Get new name
