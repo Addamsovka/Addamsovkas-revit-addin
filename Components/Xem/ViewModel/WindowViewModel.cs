@@ -15,7 +15,7 @@ namespace Xem
 
         #region Revit Events
         public static ExternalCommandData CommandData { get; set; }
-        public static TestExternalEventHandler EvHandler { get; set; }
+        public static ExportExternalEventHandler EvHandler { get; set; }
         public static ExternalEvent ExEvent { get; set; }
         #endregion
 

@@ -14,7 +14,7 @@ namespace Xem
         private WindowViewModel windowViewModel;
 
         #region Constructor
-        public MainWindow(ExternalCommandData commandData, TestExternalEventHandler eventHandler, ExternalEvent revitEvent)
+        public MainWindow(ExternalCommandData commandData, ExportExternalEventHandler eventHandler, ExternalEvent revitEvent)
         {
             InitializeComponent();
 

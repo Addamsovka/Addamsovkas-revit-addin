@@ -1,7 +1,9 @@
 C:\Program Files\Autodesk\Revit 2020\AddIns\IFCExporterUI\IFCExportUI.dll
 C:\Program Files\Autodesk\Revit 2020\RevitAPI.dll
 C:\Program Files\Autodesk\Revit 2020\RevitAPIUI.dll
+C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\Revit.IFC.Common.dll
 C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\Autodesk.UI.Windows.dll
+C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\RevitAPIIFC.dll
 C:\Program Files\IIS\Microsoft Web Deploy V3\Newtonsoft.Json.dll
 C:\Program Files\Autodesk\Revit 2020\AdpSDKCSharpWrapper.dll
 C:\Program Files\Autodesk\Revit 2020\RevitAPIFoundation.dll
@@ -51,11 +53,13 @@ C:\Program Files\Autodesk\Revit 2020\EssentialsUIAPI.dll
 C:\Program Files\Autodesk\Revit 2020\EnergyAnalysisUtilitiesAPI.dll
 C:\Program Files\Autodesk\Revit 2020\DetailUIAPI.dll
 C:\Program Files\Autodesk\Revit 2020\UIFrameworkServices.dll
+C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\IntfIFCAPI.dll
 C:\Program Files\Autodesk\Revit 2020\ManagedMC3.dll
 C:\Program Files\Autodesk\Revit 2020\Autodesk.UI.Themes.dll
 C:\Program Files\Autodesk\Revit 2020\Xceed.Wpf.AvalonDock.dll
 C:\Program Files\Autodesk\Revit 2020\RevitAPI.xml
 C:\Program Files\Autodesk\Revit 2020\RevitAPIUI.xml
+C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\RevitAPIIFC.xml
 C:\Program Files\Autodesk\Revit 2020\RevitAddInUtility.xml
 C:\Program Files\Autodesk\Revit 2020\AddIns\IFCExporterUI\cs-CZ\IFCExportUI.resources.dll
 C:\Program Files\Autodesk\Revit 2020\AddIns\IFCExporterUI\de-DE\IFCExportUI.resources.dll

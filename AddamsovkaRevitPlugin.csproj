@@ -67,9 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Components\Xem\Model\ExportSettings\IFCExportConfiguration.cs" />
+    <Compile Include="Components\Xem\Model\ExportSettings\CurrentIFCExportConfiguration.cs" />
     <Compile Include="Components\Xem\Model\IFCExporterCommand.cs" />
-    <Compile Include="Components\Xem\Model\RevitHelpers\TestExternalEventHandler.cs" />
+    <Compile Include="Components\Xem\Model\RevitHelpers\ExportExternalEventHandler.cs" />
     <Compile Include="Components\Xem\Model\RevitHelpers\ExternalEventHandler.cs" />
     <Compile Include="Components\Xem\Model\RevitModel.cs" />
     <Compile Include="Components\Xem\XemCommand.cs" />

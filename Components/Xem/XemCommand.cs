@@ -27,7 +27,7 @@ namespace Xem
             try
             {
                 #region Revit Event Handler Instance
-                TestExternalEventHandler testingEventHandler = new TestExternalEventHandler();
+                ExportExternalEventHandler testingEventHandler = new ExportExternalEventHandler();
                 ExternalEvent exEvent = ExternalEvent.Create(testingEventHandler);
                 #endregion
 

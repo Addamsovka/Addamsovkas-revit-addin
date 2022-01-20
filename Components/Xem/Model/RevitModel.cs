@@ -69,17 +69,27 @@ namespace Xem
             return stringList;
         }
 
+        /// <summary>
+        /// Create string list of IFC Export Configurations names in project
+        /// </summary>
+        /// <returns>String list of values</returns>
         public List<string> GetIfcOptions()
         {
+            // Prepare new map to work with
             IFCExportConfigurationsMap iFCExportOptions = new IFCExportConfigurationsMap();
 
-            var aha = iFCExportOptions.Values;
-            List<string> stringList = new List<string>();
-            foreach (var a in aha)
-            {
-                stringList.Add(a.Name);
-            }
+            // Get all avaiable configurations in Project
+            iFCExportOptions.Add(IFCExportConfiguration.GetInSession());
+            iFCExportOptions.AddBuiltInConfigurations();
+            iFCExportOptions.AddSavedConfigurations();
 
+            // Create list of values
+            var val = iFCExportOptions.Values;
+            List<string> stringList = new List<string>();
+            foreach (var o in val)
+            {
+                stringList.Add(o.Name);
+            }
             return stringList;
         }
 
@@ -119,7 +129,88 @@ namespace Xem
 
         #region Export
 
-        public static void ExportIfcModel(Document doc, string newName) 
+        /// <summary>
+        /// Return preset IFCExportConfiguration object for exporting.
+        /// </summary>
+        /// <param name="config"><see cref="CurrentIFCExportConfiguration"/> object with preset options</param>
+        /// <returns></returns>
+        public static BIM.IFC.Export.UI.IFCExportConfiguration CreateIfcExportConfiguration(CurrentIFCExportConfiguration config) {
+
+            // Create Instance of IFC Configuration class
+            BIM.IFC.Export.UI.IFCExportConfiguration iFCExportConfiguration = BIM.IFC.Export.UI.IFCExportConfiguration.CreateDefaultConfiguration();
+
+            // Set by user from config
+            iFCExportConfiguration.ExportBaseQuantities = config.ExportBaseQuantities;
+            iFCExportConfiguration.SplitWallsAndColumns = config.SplitWallsAndColumns;
+            iFCExportConfiguration.ExportInternalRevitPropertySets = config.ExportInternalRevitPropertySets;
+            iFCExportConfiguration.ExportIFCCommonPropertySets = config.ExportIFCCommonPropertySets;
+            iFCExportConfiguration.Export2DElements = config.Export2DElements;
+
+            iFCExportConfiguration.VisibleElementsOfCurrentView = config.VisibleElementsOfCurrentView;
+
+            iFCExportConfiguration.Use2DRoomBoundaryForVolume = config.Use2DRoomBoundaryForVolume;
+            iFCExportConfiguration.UseFamilyAndTypeNameForReference = config.UseFamilyAndTypeNameForReference;
+            iFCExportConfiguration.ExportPartsAsBuildingElements = config.ExportPartsAsBuildingElements;
+            iFCExportConfiguration.ExportSolidModelRep = config.ExportSolidModelRep;
+
+            iFCExportConfiguration.ExportSchedulesAsPsets = config.ExportSchedulesAsPsets;
+            iFCExportConfiguration.ExportUserDefinedPsets = config.ExportUserDefinedPsets;
+            iFCExportConfiguration.ExportUserDefinedPsetsFileName = config.ExportUserDefinedPsetsFileName;
+            iFCExportConfiguration.ExportUserDefinedParameterMapping = config.ExportUserDefinedParameterMapping;
+            iFCExportConfiguration.ExportUserDefinedParameterMappingFileName = config.ExportUserDefinedParameterMappingFileName;
+
+            iFCExportConfiguration.ExportBoundingBox = config.ExportBoundingBox;
+            iFCExportConfiguration.IncludeSiteElevation = config.IncludeSiteElevation;
+            iFCExportConfiguration.IncludeSteelElements = config.IncludeSteelElements;
+            iFCExportConfiguration.UseActiveViewGeometry = config.UseActiveViewGeometry;
+            iFCExportConfiguration.ExportSpecificSchedules = config.ExportSpecificSchedules;
+
+            iFCExportConfiguration.TessellationLevelOfDetail = config.TessellationLevelOfDetail;
+            iFCExportConfiguration.UseOnlyTriangulation = config.UseOnlyTriangulation;
+            iFCExportConfiguration.StoreIFCGUID = config.StoreIFCGUID;
+            iFCExportConfiguration.ExportRoomsInView = config.ExportRoomsInView;
+            iFCExportConfiguration.ExportLinkedFiles = config.ExportLinkedFiles;
+            iFCExportConfiguration.ActiveViewId = config.ActiveViewId;
+            iFCExportConfiguration.ExcludeFilter = config.ExcludeFilter;
+
+            iFCExportConfiguration.COBieCompanyInfo = config.COBieProjectInfo;
+            iFCExportConfiguration.COBieProjectInfo = config.COBieProjectInfo;
+            iFCExportConfiguration.IncludeSteelElements = config.IncludeSteelElements;        
+
+            return iFCExportConfiguration;
+        }
+
+        public static void ExportIfcModel(Document doc, string dir, string newName, IFCExportConfiguration _iFCExportConfiguration) 
+        {
+            // Create Instance of IFC Configuration class
+            BIM.IFC.Export.UI.IFCExportConfiguration iFCExportConfiguration = _iFCExportConfiguration;
+
+            // TODO choose views and set export by view
+            ElementId ExportViewId = null;
+
+            IFCExportOptions iFCExportOptions = new IFCExportOptions();
+            iFCExportConfiguration.UpdateOptions(iFCExportOptions, ExportViewId);
+
+            // Directory for the export
+            string directory = $@"{dir}";
+
+
+            /// TODO Get paramters from view and compose a name
+            string s = "project_2_<ProjectInfo>_<sharedParam>_two";
+
+
+            //Utility.Get3DViews(doc);
+            //RevitModel.GetViewSets();
+            //string newName = NameRules.prepareName(s); // TODO fix Name rules, search for real parameters
+            //string newName = s;
+
+            doc.Export(directory, newName, iFCExportOptions);
+            TaskDialog.Show("IFC Settings", directory.ToString() + newName + " has been exported.");
+
+        }
+
+
+        public static void ExportIfcModel(Document doc, string dir, string newName)
         {
             // Create Instance of IFC Configuration class
             BIM.IFC.Export.UI.IFCExportConfiguration iFCExportConfiguration = BIM.IFC.Export.UI.IFCExportConfiguration.CreateDefaultConfiguration();
@@ -133,25 +224,19 @@ namespace Xem
 
 
             IFCExportOptions iFCExportOptions = new IFCExportOptions();
+
             iFCExportConfiguration.UpdateOptions(iFCExportOptions, ExportViewId);
 
             // Directory for the export
-            string Directory = @"C:\Users\regin\Desktop\";
+            //string directory = @"C:\Users\regin\Desktop\";
+            string directory = $@"{dir}";
 
-
-            /// TODO Get paramters from view and compose a name
-            string s = "project_2_<ProjectInfo>_<sharedParam>_two";
-
-
-            //Utility.Get3DViews(doc);
-            //RevitModel.GetViewSets();
-            //string newName = NameRules.prepareName(s); // TODO fix Name rules, search for real parameters
-            //string newName = s;
-
-            doc.Export(Directory, newName, iFCExportOptions);
-            TaskDialog.Show("IFC Settings", Directory.ToString() + newName + " has been exported.");
+            doc.Export(directory, newName, iFCExportOptions);
+            TaskDialog.Show("IFC Settings", directory.ToString() + newName + " has been exported.");
 
         }
+
+
         #endregion
     }
 }

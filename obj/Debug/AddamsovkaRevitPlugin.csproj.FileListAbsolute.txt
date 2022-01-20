@@ -103,3 +103,7 @@ C:\Users\regin\source\repos\AddamsovkaRevitPlugin\obj\Debug\AddamsovkaRevitPlugi
 C:\Users\regin\source\repos\AddamsovkaRevitPlugin\obj\Debug\AddamsovkaRevitPlugin.g.resources
 C:\Users\regin\source\repos\AddamsovkaRevitPlugin\obj\Debug\AddamsovkaRevitPlugin.dll
 C:\Users\regin\source\repos\AddamsovkaRevitPlugin\obj\Debug\AddamsovkaRevitPlugin.pdb
+C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\Revit.IFC.Common.dll
+C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\RevitAPIIFC.dll
+C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\IntfIFCAPI.dll
+C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\RevitAPIIFC.xml
