@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using Autodesk.Revit.ApplicationServices;
@@ -58,6 +59,7 @@ namespace Xem
             return stringList;
         }
 
+
         public List<string> GetViewSheetSets()
         {
             IList<Element> viewSheetSets = new FilteredElementCollector(this.doc).OfClass(typeof(ViewSheetSet)).ToElements();
@@ -67,6 +69,46 @@ namespace Xem
                 stringList.Add(e.Name);
             }
             return stringList;
+        }
+
+        public static string TransferRulesToName(Element e, string rule) 
+        {
+            string name = rule;
+
+            // Get all <parameters> in string rule
+            string pattern = @"<([^><]*)>";
+            Regex controlString = new Regex(pattern);
+            RegexOptions options = RegexOptions.Singleline;
+
+            // Replace all <parameters> with parameter value
+            foreach (Match m in Regex.Matches(rule, pattern, options))
+            {
+                Debug.WriteLine("'{0}' found at index {1}.", m.Value, m.Index);
+                name = name.Replace(m.Value.ToString(), GetParameterValue(e, m.Groups[1].ToString()));
+            }
+            Debug.WriteLine(name);
+
+            return name;
+        }
+
+
+        /// <summary>
+        /// Get string value of an parameter by name
+        /// </summary>
+        /// <param name="e">Element to read values from</param>
+        /// <param name="paramName">Name of the parameter represented for the user</param>
+        /// <returns></returns>
+        public static string GetParameterValue(Element e, string paramName) {
+            
+            // Get the first parameter with avaiable name
+            var par = e.LookupParameter(paramName);
+
+            if (par == null) 
+            {
+                return "";
+            }
+            string p = par.AsValueString();
+            return p;
         }
 
         /// <summary>
@@ -180,7 +222,7 @@ namespace Xem
             return iFCExportConfiguration;
         }
 
-        public static void ExportIfcModel(Document doc, string dir, string newName, IFCExportConfiguration _iFCExportConfiguration) 
+        public static void ExportIfcModel(Document doc, string dir, string nameRule, IFCExportConfiguration _iFCExportConfiguration) 
         {
             // Create Instance of IFC Configuration class
             BIM.IFC.Export.UI.IFCExportConfiguration iFCExportConfiguration = _iFCExportConfiguration;
@@ -194,18 +236,14 @@ namespace Xem
             // Directory for the export
             string directory = $@"{dir}";
 
+            // Get first 3d element
+            Element e = new FilteredElementCollector(doc).OfClass(typeof(View3D)).WhereElementIsNotElementType().FirstElement();
 
-            /// TODO Get paramters from view and compose a name
-            string s = "project_2_<ProjectInfo>_<sharedParam>_two";
+            // Get parameter values for first view, TODO: get specific view set by user
+            string finalName = TransferRulesToName(e, nameRule);
 
-
-            //Utility.Get3DViews(doc);
-            //RevitModel.GetViewSets();
-            //string newName = NameRules.prepareName(s); // TODO fix Name rules, search for real parameters
-            //string newName = s;
-
-            doc.Export(directory, newName, iFCExportOptions);
-            TaskDialog.Show("IFC Settings", directory.ToString() + newName + " has been exported.");
+            doc.Export(directory, finalName, iFCExportOptions);
+            TaskDialog.Show("IFC Settings", directory.ToString() + finalName + " has been exported.");
 
         }
 

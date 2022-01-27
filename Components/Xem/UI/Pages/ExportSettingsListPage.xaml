@@ -1,25 +1,61 @@
 ﻿<local:BasePage
-    x:TypeArguments="local:EditExportSettingsPageViewModel"
+    Title="ExportSettingsListPage"
+    d:DesignHeight="450" d:DesignWidth="800"
     x:Class="Xem.ExportSettingsListPage"
+    x:TypeArguments="local:EditExportSettingsPageViewModel"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:local="clr-namespace:Xem"
-    mc:Ignorable="d" 
-    d:DesignHeight="450" d:DesignWidth="800"
-    Title="ExportSettingsListPage"
+    mc:Ignorable="d"    
 >
 
-    <Border Padding="10">
-        <StackPanel>
-            <StackPanel>
-                <TextBlock Text="Package" FontWeight="Bold" Margin="0 10"/>
+ 
+    <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!--#region Page Title-->
+            <StackPanel Grid.Row="0">
+                <Border Padding="2">
+                    <TextBlock Text="Title Packages" FontWeight="Bold" Margin="10"/>
+                </Border>
             </StackPanel>
-            <!-- Buttons and Desctiption -->
-            <Grid>
+            <!--#endregion-->
+            
+            <!--#region Page Content-->
 
-            </Grid>
-        </StackPanel>
-    </Border>
+            <StackPanel Grid.Row="1">
+                <ListBox>
+                    <ListBoxItem HorizontalContentAlignment="Stretch">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                                <CheckBox Height="16" Margin="0,2,5,2" />
+                                <Rectangle Fill="Tomato" Width="16" Height="16" Margin="0,2,5,2" />
+                                <TextBlock Text="Testing set name [2021/12/11]" />
+                            </StackPanel>
+
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Orientation="Horizontal">
+                                <Button HorizontalContentAlignment="Right">Edit</Button>
+                                <Button HorizontalContentAlignment="Right">Delete</Button>
+                            </StackPanel>
+
+                        </Grid>
+                    </ListBoxItem>
+                </ListBox>
+            </StackPanel>
+            <!--#endregion-->
+            
+        </Grid>
+    </StackPanel>
+
 </local:BasePage>
