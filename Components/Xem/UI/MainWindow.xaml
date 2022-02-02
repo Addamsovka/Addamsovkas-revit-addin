@@ -9,19 +9,20 @@
         MinWidth="{Binding MinimalWindowWidth}"
         Title="MainWindow" Height="500" Width="900">
 
-    <Window.Resources>
+    <!--<Window.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary.MergedDictionaries> -->
                 <!-- Loading resources styles in proper order -->
+    <!--
                 <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Fonts.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Color.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Text.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Buttons.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-
-    </Window.Resources>
+    </Window.Resources> 
+    -->
+    
     <Grid>
-        <Frame Background="{StaticResource PrimaryBrush}" x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ViewValueConverter}}" />
+        <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ViewValueConverter}}">
+        </Frame>
     </Grid>
 </Window>
