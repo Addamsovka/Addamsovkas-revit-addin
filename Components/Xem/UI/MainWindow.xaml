@@ -16,6 +16,7 @@
                 <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Fonts.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Color.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Text.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Buttons.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

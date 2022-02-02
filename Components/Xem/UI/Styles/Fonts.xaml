@@ -9,10 +9,10 @@
         <Setter Property="FontFamily" Value="Arial" />
     </Style>
 
-    <Style TargetType="{x:Type Button}" BasedOn="{Binding BaseStyle}" />
-    <Style TargetType="{x:Type Label}" BasedOn="{Binding BaseStyle}" />
-    <Style TargetType="{x:Type TextBox}" BasedOn="{Binding BaseStyle}" />
-    <Style TargetType="{x:Type TextBlock}" BasedOn="{Binding BaseStyle}" />
-    <Style TargetType="{x:Type ListView}" BasedOn="{Binding BaseStyle}" />
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseTextBoxStyle}" />
+    <Style TargetType="{x:Type Label}" BasedOn="{StaticResource BaseTextBoxStyle}" />
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseTextBoxStyle}" />
+    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBoxStyle}" />
+    <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource BaseTextBoxStyle}" />
 
 </ResourceDictionary>

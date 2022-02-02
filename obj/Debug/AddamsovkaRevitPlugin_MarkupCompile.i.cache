@@ -16,5 +16,5 @@ DEBUG;TRACE
 19-499093946
 Components\Xem\UI\Styles\Color.xaml;Components\Xem\UI\Styles\Buttons.xaml;Components\Xem\UI\Styles\Fonts.xaml;Components\Xem\UI\Styles\Text.xaml;Components\Xem\UI\Pages\EditExportSettingsPage.xaml;Components\Xem\UI\Pages\ExportSettingsListPage.xaml;Components\Xem\UI\MainWindow.xaml;
 
-True
+False
 

@@ -31,7 +31,7 @@
     
 
     <!-- Icon Button -->
-    <Style TargetType="{x:Type Button}" x:Key="IconButton">
+    <Style TargetType="{x:Type Button}" x:Key="IconButton" BasedOn="{StaticResource HoverlessButton}">
         <Setter Property="Background" Value="{Binding HighlightBrush}"/>
         <Setter Property="Foreground" Value="{Binding BGB1rush}"/>
         <Setter Property="BorderThickness" Value="0" />

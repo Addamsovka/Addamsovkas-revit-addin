@@ -10,8 +10,18 @@
     xmlns:local="clr-namespace:Xem"
     mc:Ignorable="d"    
 >
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Loading resources styles in proper order -->
+                <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Fonts.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Color.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Text.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Buttons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
 
- 
     <StackPanel>
         <Grid>
             <Grid.RowDefinitions>
@@ -45,8 +55,8 @@
                             </StackPanel>
 
                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Orientation="Horizontal">
-                                <Button HorizontalContentAlignment="Right">Edit</Button>
-                                <Button HorizontalContentAlignment="Right">Delete</Button>
+                                <Button Style="{StaticResource IconButton}" HorizontalContentAlignment="Right">Edit</Button>
+                                <Button Style="{StaticResource IconButton}" HorizontalContentAlignment="Right">Delete</Button>
                             </StackPanel>
 
                         </Grid>
