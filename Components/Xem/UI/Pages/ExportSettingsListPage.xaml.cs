@@ -16,7 +16,7 @@ namespace Xem
     /// <summary>
     /// Interaction logic for ExportSettingsListPage.xaml
     /// </summary>
-    public partial class ExportSettingsListPage : BasePage<EditExportSettingsPageViewModel>
+    public partial class ExportSettingsListPage : BasePage<ExportSettingsListPageViewModel>
     {
         public ExportSettingsListPage()
         {

@@ -5,27 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Xem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        MinHeight="{Binding MinimalWindowHeight}"
+        MinWidth="{Binding MinimalWindowWidth}"
+        Title="MainWindow" Height="500" Width="900">
+
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                
-                    <!--
-                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
-                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
-                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
-                    -->
-
-                
-                
                 <!-- Loading resources styles in proper order -->
-                
+                <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Fonts.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Color.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/AddamsovkaRevitPlugin;component/Components/Xem/UI/Styles/Text.xaml" />
-                <!--<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />-->
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
-
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

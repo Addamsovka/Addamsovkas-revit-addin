@@ -72,6 +72,7 @@
     <Compile Include="Components\Xem\Model\RevitHelpers\ExportExternalEventHandler.cs" />
     <Compile Include="Components\Xem\Model\RevitHelpers\ExternalEventHandler.cs" />
     <Compile Include="Components\Xem\Model\RevitModel.cs" />
+    <Compile Include="Components\Xem\ViewModel\ExportSettingsListPageViewModel.cs" />
     <Compile Include="Components\Xem\XemCommand.cs" />
     <Compile Include="Components\Xem\Model\ExportSettings\ExportingOptionEnum.cs" />
     <Compile Include="Components\Xem\Model\ExportSettings\ExportSettings.cs" />
@@ -84,6 +85,14 @@
     <Page Include="Components\Xem\UI\Styles\Color.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\Xem\UI\Styles\Buttons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\Xem\UI\Styles\Fonts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Components\Xem\UI\Styles\Text.xaml">
       <SubType>Designer</SubType>

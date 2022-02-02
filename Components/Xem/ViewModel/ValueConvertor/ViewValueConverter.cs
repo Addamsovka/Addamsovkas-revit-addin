@@ -24,6 +24,9 @@ namespace Xem
                 case PageEnum.EditExportSettingsPage:
                     return new EditExportSettingsPage();
 
+                case PageEnum.ExportSettingsListPage:
+                    return new ExportSettingsListPage();
+
                 default:
                     Debugger.Break();
                     return null;

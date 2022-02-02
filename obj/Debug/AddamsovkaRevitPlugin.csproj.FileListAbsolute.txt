@@ -107,8 +107,5 @@ C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\Revit.IFC.Common.dll
 C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\RevitAPIIFC.dll
 C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\IntfIFCAPI.dll
 C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\RevitAPIIFC.xml
-C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\MaterialDesignColors.dll
-C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\MaterialDesignThemes.Wpf.dll
-C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\MaterialDesignColors.pdb
-C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\MaterialDesignThemes.Wpf.pdb
-C:\Users\regin\source\repos\AddamsovkaRevitPlugin\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\regin\source\repos\AddamsovkaRevitPlugin\obj\Debug\Components\Xem\UI\Styles\Buttons.baml
+C:\Users\regin\source\repos\AddamsovkaRevitPlugin\obj\Debug\Components\Xem\UI\Styles\Fonts.baml

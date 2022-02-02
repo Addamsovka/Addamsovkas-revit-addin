@@ -19,11 +19,18 @@ namespace Xem
         public static ExternalEvent ExEvent { get; set; }
         #endregion
 
+
+        #region Window Properties
+        public static double MinimalWindowHeight { get; set; } = 450;
+        public static double MinimalWindowWidth { get; set; } = 800;
+        #endregion
+
+
         #region Pages
         /// <summary>
         /// Set default page to the main window
         /// </summary>
-        public PageEnum CurrentPage { get; set; } = PageEnum.EditExportSettingsPage;
+        public PageEnum CurrentPage { get; set; } = PageEnum.ExportSettingsListPage;
 
         #endregion
 
