@@ -9,7 +9,7 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 #endregion
 
-namespace Template
+namespace DynTest
 {
   [Transaction(TransactionMode.Manual)]
 public class TemplateCommand : IExternalCommand
